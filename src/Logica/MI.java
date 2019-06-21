@@ -77,7 +77,7 @@ public class MI {
 
         //TODO: AGREGAR EL CONSECUENTE A LA MT Y OBTENER LA RESPUESTA ASOCIADA A LA REGLA ELEGIDA PARA QUE EL USUARIO TENGA FEEDBACK
 
-        palabraInferidaInterface.palabraMacheada("ACA HAY QUE PONER EL ANTECEDENTE");
+        palabraInferidaInterface.palabraMacheada("ACA HAY QUE PONER EL CONSECUENTE");
 
 
         return "FALTA HACER QUE RESPONDA ALGO EL TIPO ESTE";
