@@ -1,22 +1,28 @@
 package ChatFrame;
 
+import Logica.MI;
+
 import javax.swing.*;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 public class chat {
+    private static MI maquinaDeInferencia;
     private JButton botonEnviar;
     private JTextField textoEnviar;
     private JList contenedorChat;
     private JPanel panelMain;
-    private DefaultListModel<String> modelo;
+    private JList palabrasInferidas;
+    private DefaultListModel<String> modeloChat;
+    private DefaultListModel<String> modeloPalabrasInferidas;
 
     public chat() {
 
-        modelo = new DefaultListModel<>();
-        contenedorChat.setModel(modelo);
+        modeloChat = new DefaultListModel<>();
+        modeloPalabrasInferidas = new DefaultListModel<>();
+        contenedorChat.setModel(modeloChat);
+        palabrasInferidas.setModel(modeloPalabrasInferidas);
 
         botonEnviar.addMouseListener(new MouseAdapter() {
             @Override
@@ -26,16 +32,17 @@ public class chat {
             }
         });
 
-        botonEnviar.addKeyListener(new KeyAdapter() {
+        botonEnviar.addActionListener(new AbstractAction() {
             @Override
-            public void keyPressed(KeyEvent e) {
-                super.keyPressed(e);
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("ENTROOOOOOOOOO");
                 if (textoEnviar.getText().length() > 0) enviarDatosMaquinaDeInferencias(textoEnviar.getText());
             }
         });
     }
 
     public static void main(String[] args) {
+        maquinaDeInferencia = new MI();
         JFrame frame = new JFrame("Compras Inteligentes");
         frame.setContentPane(new chat().panelMain);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -44,11 +51,22 @@ public class chat {
     }
 
     private void enviarDatosMaquinaDeInferencias(String texto) {
-        //LLAMAR A MAQUINA DE INFERENCIA PARA QUE EL AGENTE DEVUELVA UNA PREGUNTA (ESTO HACERLO SEGUN LA KEYWORD QUE COINCIDEN)
 
-        String pregunta = "¡pregunta que deberia retornar el agente!";
-        modelo.addElement(pregunta);
+        modeloChat.addElement("Usuario: " + texto);
 
 
+        //TOKENIZAR Y ENVIAR A LA MI PARA QUE RETORNE UNA PREGUNTA Y ADEMAS ACTUALICE LA MT
+        ArrayList<String> tokens = new ArrayList<>();
+        StringTokenizer st = new StringTokenizer(texto, " ");
+        while (st.hasMoreTokens()) {
+            tokens.add(st.nextToken());
+        }
+
+        String pregunta = maquinaDeInferencia.responder(tokens, palabraInferida -> {
+            System.out.println("Palabra que fue inferida: " + palabraInferida);
+            modeloPalabrasInferidas.addElement(palabraInferida);
+        });
+
+        modeloChat.addElement("Robot: " + pregunta);
     }
 }
