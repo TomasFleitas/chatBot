@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d43de923-3444-4109-9668-77ce725ccead" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChatFrame/chat.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChatFrame/chat.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChatFrame/chat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChatFrame/chat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Logica/MI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logica/MI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logica/Regla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logica/Regla.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,46 +40,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ChatFrame/chat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-101">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="378">
+              <caret line="55" column="50" lean-forward="true" selection-start-line="55" selection-start-column="50" selection-end-line="55" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ChatFrame/chat.form">
-          <provider selected="true" editor-type-id="ui-designer" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Logica/MI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="562">
-              <caret line="83" column="5" lean-forward="true" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
+            <state relative-caret-position="340">
+              <caret line="108" column="40" selection-start-line="108" selection-start-column="24" selection-end-line="108" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Logica/Literal.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
-              <folding>
-                <element signature="e#144#145#0" expanded="true" />
-                <element signature="e#192#193#0" expanded="true" />
-                <element signature="e#231#232#0" expanded="true" />
-                <element signature="e#266#267#0" expanded="true" />
-                <element signature="e#322#323#0" expanded="true" />
-                <element signature="e#370#371#0" expanded="true" />
-                <element signature="e#424#425#0" expanded="true" />
-                <element signature="e#507#508#0" expanded="true" />
+                <element signature="e#841#842#0" expanded="true" />
+                <element signature="e#877#878#0" expanded="true" />
+                <element signature="e#945#946#0" expanded="true" />
+                <element signature="e#995#996#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -84,10 +68,25 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Logica/Regla.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="42" selection-start-line="42" selection-end-line="42" />
+            <state relative-caret-position="395">
+              <caret line="65" column="39" selection-start-line="65" selection-start-column="39" selection-end-line="65" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#686#687#0" expanded="true" />
+                <element signature="e#711#712#0" expanded="true" />
+                <element signature="e#748#749#0" expanded="true" />
+                <element signature="e#776#777#0" expanded="true" />
+                <element signature="e#1505#1506#0" expanded="true" />
+                <element signature="e#1569#1570#0" expanded="true" />
+                <element signature="e#1674#1675#0" expanded="true" />
+              </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ChatFrame/chat.form">
+          <provider selected="true" editor-type-id="ui-designer" />
         </entry>
       </file>
     </leaf>
@@ -108,9 +107,9 @@
         <option value="$PROJECT_DIR$/src/Logica/MaquinaDeInferencias.java" />
         <option value="$PROJECT_DIR$/src/Logica/MP.java" />
         <option value="$PROJECT_DIR$/src/Logica/Literal.java" />
-        <option value="$PROJECT_DIR$/src/Logica/Regla.java" />
         <option value="$PROJECT_DIR$/src/ChatFrame/chat.form" />
         <option value="$PROJECT_DIR$/src/ChatFrame/chat.java" />
+        <option value="$PROJECT_DIR$/src/Logica/Regla.java" />
         <option value="$PROJECT_DIR$/src/Logica/MI.java" />
       </list>
     </option>
@@ -126,36 +125,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="chatBot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chatBot" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chatBot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chatBot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chatBot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chatBot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ChatFrame" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chatBot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chatBot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Logica" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -211,18 +183,19 @@
       <workItem from="1560962607693" duration="2021000" />
       <workItem from="1561069785938" duration="6227000" />
       <workItem from="1561076594013" duration="223000" />
+      <workItem from="1561147311715" duration="5124000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8471000" />
+    <option name="totallyTimeSpent" value="13994000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.37801608" visible="true" weight="0.17449665" />
-      <window_info id="Structure" order="1" sideWeight="0.6219839" side_tool="true" visible="true" weight="0.17449665" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.65579116" visible="true" weight="0.17986578" />
+      <window_info id="Structure" order="1" sideWeight="0.3442088" side_tool="true" visible="true" weight="0.17986578" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -230,7 +203,7 @@
       <window_info id="Favorites" order="6" sideWeight="0.5013405" side_tool="true" weight="0.11342282" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3297587" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.17828418" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -313,22 +286,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="280" column="15" selection-start-line="280" selection-start-column="15" selection-end-line="280" selection-end-column="15" />
-          <folding>
-            <element signature="e#10365#10366#0" expanded="true" />
-            <element signature="e#10392#10393#0" expanded="true" />
-            <element signature="e#11083#11084#0" expanded="true" />
-            <element signature="e#11121#11122#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ChatFrame/chat.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Logica/Literal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -346,13 +303,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logica/Regla.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/awt/Component.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="311">
@@ -367,22 +317,80 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/util/EventObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/awt/AWTEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="79" column="43" lean-forward="true" selection-start-line="79" selection-start-column="43" selection-end-line="79" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/awt/event/ActionEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="59" column="39" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ChatFrame/chat.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ChatFrame/chat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-101">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="378">
+          <caret line="55" column="50" lean-forward="true" selection-start-line="55" selection-start-column="50" selection-end-line="55" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logica/MI.java">
+    <entry file="file://$PROJECT_DIR$/src/Logica/Regla.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="83" column="5" lean-forward="true" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
+        <state relative-caret-position="395">
+          <caret line="65" column="39" selection-start-line="65" selection-start-column="39" selection-end-line="65" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#686#687#0" expanded="true" />
+            <element signature="e#711#712#0" expanded="true" />
+            <element signature="e#748#749#0" expanded="true" />
+            <element signature="e#776#777#0" expanded="true" />
+            <element signature="e#1505#1506#0" expanded="true" />
+            <element signature="e#1569#1570#0" expanded="true" />
+            <element signature="e#1674#1675#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="523" column="20" selection-start-line="523" selection-start-column="20" selection-end-line="523" selection-end-column="20" />
+          <folding>
+            <element signature="e#10365#10366#0" expanded="true" />
+            <element signature="e#10392#10393#0" expanded="true" />
+            <element signature="e#11083#11084#0" expanded="true" />
+            <element signature="e#11121#11122#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logica/MI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="108" column="40" selection-start-line="108" selection-start-column="24" selection-end-line="108" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#841#842#0" expanded="true" />
+            <element signature="e#877#878#0" expanded="true" />
+            <element signature="e#945#946#0" expanded="true" />
+            <element signature="e#995#996#0" expanded="true" />
           </folding>
         </state>
       </provider>

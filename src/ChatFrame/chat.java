@@ -31,16 +31,7 @@ public class chat {
                 if (textoEnviar.getText().length() > 0) enviarDatosMaquinaDeInferencias(textoEnviar.getText());
             }
         });
-
-        botonEnviar.addActionListener(new AbstractAction() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("ENTROOOOOOOOOO");
-                if (textoEnviar.getText().length() > 0) enviarDatosMaquinaDeInferencias(textoEnviar.getText());
-            }
-        });
     }
-
     public static void main(String[] args) {
         maquinaDeInferencia = new MI();
         JFrame frame = new JFrame("Compras Inteligentes");
