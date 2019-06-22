@@ -8,17 +8,18 @@ public class Regla {
 
     private Integer id;
     private ArrayList<Literal> antecedentePalabrasClaves;
-    private Literal consecuente;
     private String respuestaDialogo;
     private Boolean yaEjecutada = false;
+    private int prioridad;
+    private int novedad=0;
 
     public Regla() {
     }
 
-    public Regla(Integer id, ArrayList<Literal> antecedentePalabrasClaves, Literal consecuente, String respuestaDialogo) {
+    public Regla(Integer id, ArrayList<Literal> antecedentePalabrasClaves, int prioridad, String respuestaDialogo) {
         this.id = id;
         this.antecedentePalabrasClaves = antecedentePalabrasClaves;
-        this.consecuente = consecuente;
+        this.prioridad = prioridad;
         this.respuestaDialogo = respuestaDialogo;
     }
 
@@ -30,6 +31,14 @@ public class Regla {
         this.id = id;
     }
 
+    public int getNovedad() {
+        return novedad;
+    }
+
+    public void setNovedad(int novedad) {
+        this.novedad = novedad;
+    }
+
     public ArrayList<Literal> getAntecedentePalabrasClaves() {
         return antecedentePalabrasClaves;
     }
@@ -38,13 +47,14 @@ public class Regla {
         this.antecedentePalabrasClaves = antecedentePalabrasClaves;
     }
 
-    public Literal getConsecuente() {
-        return consecuente;
+    public int getPrioridad() {
+        return prioridad;
     }
 
-    public void setConsecuente(Literal consecuente) {
-        this.consecuente = consecuente;
+    public void setPrioridad(int prioridad) {
+        this.prioridad = prioridad;
     }
+
 
     public String getRespuestaDialogo() {
         return respuestaDialogo;

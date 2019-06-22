@@ -22,4 +22,9 @@ public class Literal {
     public boolean equals(Object obj){
     return palabraClave.equalsIgnoreCase(((Literal) obj).getPalabraClave());
     }
+
+    @Override
+    public String toString(){
+        return palabraClave;
+    }
 }

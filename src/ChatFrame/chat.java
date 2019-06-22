@@ -1,5 +1,6 @@
 package ChatFrame;
 
+import Logica.Literal;
 import Logica.MI;
 
 import javax.swing.*;
@@ -45,19 +46,19 @@ public class chat {
 
         modeloChat.addElement("Usuario: " + texto);
 
-
-        //TOKENIZAR Y ENVIAR A LA MI PARA QUE RETORNE UNA PREGUNTA Y ADEMAS ACTUALICE LA MT
-        ArrayList<String> tokens = new ArrayList<>();
-        StringTokenizer st = new StringTokenizer(texto, " ");
-        while (st.hasMoreTokens()) {
-            tokens.add(st.nextToken());
-        }
-
-        String pregunta = maquinaDeInferencia.responder(tokens, palabraInferida -> {
-            System.out.println("Palabra que fue inferida: " + palabraInferida);
-            modeloPalabrasInferidas.addElement(palabraInferida);
+        String dialogoRobot = maquinaDeInferencia.responder(texto, palabraInferida -> {
+            String palabras = "KeyWords: ";
+            int i= 1;
+            for (Literal l:palabraInferida){
+                if (i%4 == 0){
+                    palabras += "\n";
+                }
+                palabras+= l;
+                i++;
+            }
+            modeloPalabrasInferidas.addElement(palabras);
         });
 
-        modeloChat.addElement("Robot: " + pregunta);
+        modeloChat.addElement("Robot: " + dialogoRobot);
     }
 }
