@@ -17,6 +17,7 @@ public class chat {
     private JList palabrasInferidas;
     private DefaultListModel<String> modeloChat;
     private DefaultListModel<String> modeloPalabrasInferidas;
+    private int CANT_ESPACIOS = 50;
 
     public chat() {
 
@@ -30,9 +31,11 @@ public class chat {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 if (textoEnviar.getText().length() > 0) enviarDatosMaquinaDeInferencias(textoEnviar.getText());
+                textoEnviar.setText("");
             }
         });
     }
+
     public static void main(String[] args) {
         maquinaDeInferencia = new MI();
         JFrame frame = new JFrame("Compras Inteligentes");
@@ -44,21 +47,28 @@ public class chat {
 
     private void enviarDatosMaquinaDeInferencias(String texto) {
 
+        agregarSaltoDeLinea(texto);
         modeloChat.addElement("Usuario: " + texto);
 
         String dialogoRobot = maquinaDeInferencia.responder(texto, palabraInferida -> {
             String palabras = "KeyWords: ";
-            int i= 1;
-            for (Literal l:palabraInferida){
-                if (i%4 == 0){
+            int i = 1;
+            for (Literal l : palabraInferida) {
+                if (i % 4 == 0) {
                     palabras += "\n";
                 }
-                palabras+= l;
+                palabras += l;
                 i++;
             }
             modeloPalabrasInferidas.addElement(palabras);
         });
 
+
         modeloChat.addElement("Robot: " + dialogoRobot);
+
     }
+
+    private void agregarSaltoDeLinea(String texto) {
+    }
+
 }

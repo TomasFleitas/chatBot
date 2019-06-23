@@ -67,10 +67,11 @@ public class MI {
 
         //FILTRAR LOS LITERALES ESCRITOS POR EL USUARIO CON LA BAG DE KEYWORD
         int longitudPalabrasUsuario = literalesDeUsuario.size();
-        for (int h = 0; h < longitudPalabrasUsuario; h++) {
-            if (!BAG_KEYWORD.contains(literalesDeUsuario.get(h))) literalesDeUsuario.remove(h);
+        if (longitudPalabrasUsuario <= BAG_KEYWORD.size()) {
+            for (int h = 0; h < longitudPalabrasUsuario; h++) {
+                if (!BAG_KEYWORD.contains(literalesDeUsuario.get(h))) literalesDeUsuario.remove(h);
+            }
         }
-
         //SE AGRUPAN LOS LITERALES DE LA MI Y LOS LITERALES ESCRITOS POR EL USURIO
         MT.addAll(literalesDeUsuario);
 
@@ -222,8 +223,13 @@ public class MI {
     }
 
     private void setDialogosDefault() {
-        dialogosDefault.add("¿No entiendo lo que quieres decir, por favor me lo puedes repetir?");
+        dialogosDefault.add("No entiendo lo que quieres decir, ¿por favor me lo puedes repetir?");
         dialogosDefault.add("No te estaria entendiendo");
-        dialogosDefault.add("¿Podias explicarte un poco mejor?");
+        dialogosDefault.add("¿Podrias explicarte un poco mejor?");
+        dialogosDefault.add("¿Podrias explicarte con otras palabras?");
+        dialogosDefault.add("Hablando de esa manera no llegaremos a un acuerdo");
+        dialogosDefault.add("Debes responderme lo que te estoy preguntando");
+        dialogosDefault.add("Yo pregunto, tú respondes, simple no ?");
+        dialogosDefault.add("Ayudame a ayudarte");
     }
 }
