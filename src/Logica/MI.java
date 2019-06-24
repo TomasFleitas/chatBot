@@ -144,9 +144,7 @@ public class MI {
     private void noDuplicidad(ArrayList<Regla> reglasCotejadas) {
         if (reglasCotejadas.size() > 1) {
             for (Regla reglaActiva : reglasActivas) {
-                if (reglasCotejadas.contains(reglaActiva)) {
-                    reglasCotejadas.remove(reglaActiva);
-                }
+                reglasCotejadas.remove(reglaActiva);
             }
         }
     }
