@@ -7,7 +7,8 @@ public class Literal {
     }
 
     public Literal(String palabraClave) {
-        this.palabraClave = palabraClave;
+
+        this.palabraClave = palabraClave.toLowerCase();
     }
 
     public String getPalabraClave() {
@@ -26,5 +27,10 @@ public class Literal {
     @Override
     public String toString(){
         return palabraClave;
+    }
+
+    @Override
+    public int hashCode() {
+        return palabraClave.hashCode();
     }
 }

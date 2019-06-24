@@ -1,17 +1,17 @@
 package Logica;
 
-
 import java.util.*;
 
 
 public class MI {
 
     private ArrayList<Regla> MP = new ArrayList<>();
-    private ArrayList<Literal> MT = new ArrayList<>();
+    private HashSet<Literal> MT = new HashSet<>();
     private ArrayList<Regla> reglasActivas = new ArrayList<>();
     private Integer NUMERO_DE_INFERENCIA = 0;
     private ArrayList<String> dialogosDefault = new ArrayList<>();
     private HashSet<Literal> BAG_KEYWORD = new HashSet<>();
+    private HashMap<Literal,Literal> palabrasRaices = new HashMap<>();
 
     public interface PalabrasClavesMacheadasInterface {
         void palabrasMacheadas(ArrayList<Literal> palabraInferida);
@@ -19,9 +19,13 @@ public class MI {
 
     public MI() {
         setDialogosDefault();
+        MP = CargadorReglas.getReglas();
+        palabrasRaices = CargadorReglas.getPalabrasRaices();
+        BAG_KEYWORD.addAll(CargadorReglas.getPalabrasClaves());
+        //for(Regla regla : MP) System.out.println(regla.getAntecedentePalabrasClaves()+": ");//+regla.getRespuestasDialogo());
     }
 
-    public MI(ArrayList<Regla> MP, ArrayList<Literal> MT) {
+    public MI(ArrayList<Regla> MP, HashSet<Literal> MT) {
         this.MP = MP;
         this.MT = MT;
         setDialogosDefault();
@@ -35,11 +39,11 @@ public class MI {
         this.MP = MP;
     }
 
-    public ArrayList<Literal> getMT() {
+    public HashSet<Literal> getMT() {
         return MT;
     }
 
-    public void setMT(ArrayList<Literal> MT) {
+    public void setMT(HashSet<Literal> MT) {
         this.MT = MT;
     }
 
@@ -54,6 +58,8 @@ public class MI {
     public String responder(String textoUsuario, PalabrasClavesMacheadasInterface palabrasClavesMacheadasInterface) {
         NUMERO_DE_INFERENCIA++;
 
+        System.out.println("Usuario dice: "+textoUsuario);
+
         //TOKENIZAR
         ArrayList<String> tokens = new ArrayList<>();
         StringTokenizer st = new StringTokenizer(textoUsuario, " ");
@@ -67,15 +73,14 @@ public class MI {
 
         //FILTRAR LOS LITERALES ESCRITOS POR EL USUARIO CON LA BAG DE KEYWORD
         int longitudPalabrasUsuario = literalesDeUsuario.size();
-        if (longitudPalabrasUsuario <= BAG_KEYWORD.size()) {
-            for (int h = 0; h < longitudPalabrasUsuario; h++) {
-                if (!BAG_KEYWORD.contains(literalesDeUsuario.get(h))) literalesDeUsuario.remove(h);
-            }
+        for (int h = 0; h < longitudPalabrasUsuario; h++) {
+            if (palabrasRaices.containsKey(literalesDeUsuario.get(h)) && BAG_KEYWORD.contains(palabrasRaices.get(literalesDeUsuario.get(h))))
+                //System.out.println("agregar a MT "+palabrasRaices.get(literalesDeUsuario.get(h)));
+                MT.add(palabrasRaices.get(literalesDeUsuario.get(h)));
         }
-        //SE AGRUPAN LOS LITERALES DE LA MI Y LOS LITERALES ESCRITOS POR EL USURIO
-        MT.addAll(literalesDeUsuario);
 
         //SE REALIZA LA INFERENCIA
+
         ArrayList<Regla> reglasCotejadas = new ArrayList<>();
         faseCotejo(reglasCotejadas);
         faseResolucion(reglasCotejadas);
@@ -88,16 +93,16 @@ public class MI {
             ArrayList<Regla> procesoDeInferir = new ArrayList<>();
             for (int x = 0; x < reglasCotejadas.size(); x++) {
                 for (int i = 0; i < reglasCotejadas.size() - x - 1; i++) {
-                    if (reglasCotejadas.get(i).getAntecedentePalabrasClaves().size() > reglasCotejadas.get(i + 1).getAntecedentePalabrasClaves().size()) {
+                    if (reglasCotejadas.get(i).getAntecedentePalabrasClaves().size() < reglasCotejadas.get(i + 1).getAntecedentePalabrasClaves().size()) {
                         Regla tmp = reglasCotejadas.get(i + 1);
-                        reglasCotejadas.add(i + 1, reglasCotejadas.get(i));
-                        reglasCotejadas.add(i, tmp);
+                        reglasCotejadas.set(i + 1, reglasCotejadas.get(i));
+                        reglasCotejadas.set(i, tmp);
                     }
                 }
             }
 
             procesoDeInferir.add(reglasCotejadas.get(0));
-            for (Regla regla : reglasCotejadas.subList(1, reglasCotejadas.size() - 1)) {
+            for (Regla regla : reglasCotejadas.subList(1, reglasCotejadas.size())) {
                 if (reglasCotejadas.get(0).getAntecedentePalabrasClaves().size() == regla.getAntecedentePalabrasClaves().size()) {
                     procesoDeInferir.add(regla);
                 } else {
@@ -117,16 +122,16 @@ public class MI {
             ArrayList<Regla> procesoDeInferir = new ArrayList<>();
             for (int x = 0; x < reglasCotejadas.size(); x++) {
                 for (int i = 0; i < reglasCotejadas.size() - x - 1; i++) {
-                    if (reglasCotejadas.get(i).getNovedad() > reglasCotejadas.get(i + 1).getNovedad()) {
+                    if (reglasCotejadas.get(i).getNovedad() < reglasCotejadas.get(i + 1).getNovedad()) {
                         Regla tmp = reglasCotejadas.get(i + 1);
-                        reglasCotejadas.add(i + 1, reglasCotejadas.get(i));
-                        reglasCotejadas.add(i, tmp);
+                        reglasCotejadas.set(i + 1, reglasCotejadas.get(i));
+                        reglasCotejadas.set(i, tmp);
                     }
                 }
             }
 
             procesoDeInferir.add(reglasCotejadas.get(0));
-            for (Regla regla : reglasCotejadas.subList(1, reglasCotejadas.size() - 1)) {
+            for (Regla regla : reglasCotejadas.subList(1, reglasCotejadas.size())) {
                 if (reglasCotejadas.get(0).getNovedad() == regla.getNovedad()) {
                     procesoDeInferir.add(regla);
                 } else {
@@ -154,16 +159,16 @@ public class MI {
             ArrayList<Regla> procesoDeInferir = new ArrayList<>();
             for (int x = 0; x < reglasCotejadas.size(); x++) {
                 for (int i = 0; i < reglasCotejadas.size() - x - 1; i++) {
-                    if (reglasCotejadas.get(i).getPrioridad() > reglasCotejadas.get(i + 1).getPrioridad()) {
+                    if (reglasCotejadas.get(i).getPrioridad() < reglasCotejadas.get(i + 1).getPrioridad()) {
                         Regla tmp = reglasCotejadas.get(i + 1);
-                        reglasCotejadas.add(i + 1, reglasCotejadas.get(i));
-                        reglasCotejadas.add(i, tmp);
+                        reglasCotejadas.set(i + 1, reglasCotejadas.get(i));
+                        reglasCotejadas.set(i, tmp);
                     }
                 }
             }
 
             procesoDeInferir.add(reglasCotejadas.get(0));
-            for (Regla regla : reglasCotejadas.subList(1, reglasCotejadas.size() - 1)) {
+            for (Regla regla : reglasCotejadas.subList(1, reglasCotejadas.size())) {
                 if (reglasCotejadas.get(0).getPrioridad() == regla.getPrioridad()) {
                     procesoDeInferir.add(regla);
                 } else {
@@ -186,13 +191,28 @@ public class MI {
 
     private void faseResolucion(ArrayList<Regla> reglasCotejadas) {
         noDuplicidad(reglasCotejadas);
+        System.out.println("Luego de filtrar por no duplicidad queda/n:");
+        for(Regla r : reglasCotejadas) System.out.println("Regla "+r.getId()+": antecedentes="+r.getAntecedentePalabrasClaves());
+        if(reglasCotejadas.size()<=1) return;
         especificidad(reglasCotejadas);
+        System.out.println("Luego de filtrar por especificidad queda/n:");
+        for(Regla r : reglasCotejadas) System.out.println("Regla "+r.getId()+": antecedentes="+r.getAntecedentePalabrasClaves());
+        if(reglasCotejadas.size()<=1) return;
         novedad(reglasCotejadas);
+        System.out.println("Luego de filtrar por novedad queda/n:");
+        for(Regla r : reglasCotejadas) System.out.println("Regla "+r.getId()+": antecedentes="+r.getAntecedentePalabrasClaves());
+        if(reglasCotejadas.size()<=1) return;
         prioridad(reglasCotejadas);
+        System.out.println("Luego de filtrar por prioridad queda/n:");
+        for(Regla r : reglasCotejadas) System.out.println("Regla "+r.getId()+": antecedentes="+r.getAntecedentePalabrasClaves());
+        if(reglasCotejadas.size()<=1) return;
         aleatoriedad(reglasCotejadas);
+        System.out.println("Luego de seleccionar aleatoriamente queda:");
+        for(Regla r : reglasCotejadas) System.out.println("Regla "+r.getId()+": antecedentes="+r.getAntecedentePalabrasClaves());
     }
 
     private void faseCotejo(ArrayList<Regla> reglasCotejadas) {
+        System.out.println("COTEJO");
         for (Regla r : MP) {
             int literalesDelAntecedente = r.getAntecedentePalabrasClaves().size();
             int countLiterals = 0;
@@ -203,16 +223,21 @@ public class MI {
             }
             if (countLiterals == literalesDelAntecedente) {
                 reglasCotejadas.add(r);
-                if (r.getNovedad() != 0) r.setNovedad(NUMERO_DE_INFERENCIA);
+                if (r.getNovedad() == 0) r.setNovedad(NUMERO_DE_INFERENCIA);
+                System.out.println("Regla "+r.getId()+": antecedentes="+r.getAntecedentePalabrasClaves());
             }
+
         }
     }
 
     private String faseEjecucion(ArrayList<Regla> reglasCotejadas, PalabrasClavesMacheadasInterface palabrasClavesMacheadasInterface) {
-        if (reglasCotejadas.size() == 1) {
+        if (reglasCotejadas.size() >= 1) {
             reglasActivas.add(reglasCotejadas.get(0));
             palabrasClavesMacheadasInterface.palabrasMacheadas(reglasCotejadas.get(0).getAntecedentePalabrasClaves());
-            return reglasCotejadas.get(0).getRespuestaDialogo();
+            reglasCotejadas.get(0).ejecutar();
+            Collections.shuffle(reglasCotejadas.get(0).getRespuestasDialogo());
+            System.out.println("Agente dice: "+reglasCotejadas.get(0).getRespuestasDialogo().get(0));
+            return reglasCotejadas.get(0).getRespuestasDialogo().get(0);
         } else {
             System.err.println("HUBO UN ERROR AL INFERIR 1 SOLA REGLA, cant. reglas inferidas: " + reglasCotejadas.size());
             Collections.shuffle(dialogosDefault);

@@ -1,0 +1,187 @@
+21
+#Saludo
+3
+Hola, en qué lo puedo ayudar?
+Hola, qué necesita?
+Hola, estoy aquí para ayudarte!
+#General
+2
+Me alegra poder ayudarlo, ¿Qué desea?
+Espero ser de ayuda, ¿Por qué motivo se encuentra acá?
+#UsoComputadora
+2
+¿Qué tipo de uso está buscando? ¿Para edición, juegos, entretenimiento, oficina?
+¿La está buscando para edición, juegos, entretenimiento, oficina?
+#GamaEditar
+2
+Ahora necesito saber, si desea gama media, alta o premium. La baja no es recomendada para este uso.
+¿Prefiere gama media, alta o premium? Recuerde que la gama baja no se recomienda.
+#GamaJugar
+2
+Ahora necesito saber, si desea gama alta o premium. Una gama menor no brindará esta funcionalidad
+¿Prefiere gama alta o premium? Gamas menores no ofrecen esta funcionalidad
+#GamaEntretenimiento
+2
+Con una gama baja o media le debería bastar, ¿cuál prefiere?
+Para esta funcionalidad, con gama baja o media es suficiente, ¿cuál va a escoger?
+#GamaOficina
+2
+Con una gama baja o media le debería bastar, ¿cuál prefiere?
+Para esta funcionalidad, con gama baja o media es suficiente, ¿cuál va a escoger?
+#PantallaComputadora
+2
+¿Que tamaño de pantalla desea?
+¿Prefiere un tamaño más cómodo o prefiere mayor visualización?
+#ProcesadorBaja
+2
+¿Que clase de procesador desea? Recomendamos un i3, pero un i5 sería mejor a futuro.
+Un i3 iría muy bien para la funcionalidad que desea, ¿Qué prefiere? También puede optar por un i5
+#ProcesadorMedia
+2
+Para la funcionalidad que usted requiere se recomienda un i5, ¿que prefiere?
+¿Que clase de procesador desea? Recomendamos un i5.
+#ProcesadorAlta
+2
+Para la funcionalidad que usted requiere se recomienda un i5 y para mayor fidelidad un i7, ¿que prefiere?
+¿Que clase de procesador desea? Recomendamos un i5 como mínimo, pero mejor es un i7.
+#ProcesadorPremium
+2
+Un i5 podría cubrir los requisitos mínimos pero se apunta que escoja un i7. ¿Que prefiere?
+Un i7 sería la mejor opción para la gama solicitada, aunque un i5 llegaría a cubrir los requisitos minimos, ¿qué desea?
+#RAMBaja
+2
+Para la gama baja recomendamos 4GB de RAM, ¿Que tamaño desea?
+Para gama baja con 4GB de RAM debería bastar, ¿Cuánto desea?
+#RAMMedia
+2
+Para la gama media recomendamos 8GB de RAM, ¿Que tamaño desea?
+Para gama media con 8GB de RAM debería bastar, ¿Cuánto desea?
+#RAMAlta
+2
+Para la gama alta recomendamos 12GB de RAM, ¿Que tamaño desea?
+Para gama alta con 12GB de RAM debería bastar, ¿Cuánto desea?
+#RAMPremium
+2
+Para la gama premium recomendamos 16GB de RAM, ¿Que tamaño desea?
+Para gama premium con 16GB de RAM debería bastar, ¿Cuánto desea?
+#ALMACENAMIENTO
+2
+Para almacenar sus datos, ¿prefiere un disco duro, un disco en estado sólido, o una configuración híbrida?
+Prefiere un SSD, un HDD o una configuración híbrida
+#ALMACENAMIENTOHDD
+2
+¿Que tamaño de disco duro prefiere?
+¿Que capacidad de disco duro prefiere?
+#ALMACENAMIENTOSSD
+2
+¿Que tamaño de disco en estado solido prefiere?
+¿Que capacidad de disco en estado solido prefiere?
+#ALMACENAMIENTOHibrido
+2
+¿Que configuración híbrida de discos prefiere?
+¿que tamaño de discos prefiere?
+#MARCA
+2
+¿Quiere alguna marca en especial?
+¿Tiene preferencia por alguna marca?
+46
+$grupoBuscar:buscando,viendo,comprar,necesito,necesitar
+$grupoPc:notebook,computadora,compu,pc,portatil
+$grupoTV:tv,smart,television,televisor,lcd
+$grupoCelular:Smartphone,Celu,celular,movil,telefono
+$grupoEditar:edicion,editar,photoshop,autocad,coreldraw
+$grupoJugar:juegos,jugar,gaming,gamer
+$grupoEntretenimiento:netflix,peliculas,entretenimiento,youtube
+$grupoOficina:word,excel,ofimatica,documentos,archivos
+$grupoGamaBaja:baja
+$grupoGamaMedia:media
+$grupoGamaAlta:alta
+$grupoGamaPremium:premium
+$grupoPantPequenio:chico,portable,pequenio,transportable
+$grupoPantMediano:mediano,balanceado,regular
+$grupoPantGrande:visualizacion,grande
+$grupoPentium:pentium,barato,economico
+$grupoI3:i3,barato,economico,funcional
+$grupoI5:i5,equilibrado,veloz
+$grupoI7:i7,mejor,caro
+$grupoI9:i9,mejor,caro,ultimo
+$grupo4GB:4gb,poca,barato
+$grupo8GB:8gb,mas
+$grupo12GB:12gb,sobre,bastante
+$grupo16GB:16gb,caro,mejor
+$grupo32GB:32gb,caro,mejor
+$grupoHDD:hdd,duro,disco,normal,barato
+$grupoSSD:ssd,solido,estado,rapido,mejor
+$grupoHibrido:balanceado,hibrido,dos
+$grupo500GB:poco,minimo,500gb
+$grupo1TB:medio,1tb
+$grupo2TB:maximo,mejor,2tb
+$grupo256GB:256gb,minimo
+$grupo400GB:400gb,medio
+$grupo1TBSSD:maximo,mejor,1tb
+$grupoDiscoPequenio:pequenio,barato
+$grupoDiscoMediano:regular,256ssd,bastante,medio,mediano
+$grupoDiscoGrande:1tb,2tb,mejor,mucho,grande
+$grupoHP:hp
+$grupoAcer:acer
+$grupoAsus:asus
+$grupoMsi:msi
+$grupoLenovo:lenovo
+$grupoBangho:bangho
+$grupoApple:apple
+$grupoRazer:razer
+$grupoDell:dell
+53
+#Saludo $grupoPc #UsoComputadora
+#UsoComputadora $grupoEditar #GamaEditar
+#UsoComputadora $grupoJugar #GamaJugar
+#UsoComputadora $grupoEntretenimiento #GamaEntretenimientoOficina
+#UsoComputadora $grupoOficina #GamaEntretenimientoOficina
+#ALMACENAMIENTO $grupoHDD #ALMACENAMIENTOHDD
+#ALMACENAMIENTO $grupoHibrido #ALMACENAMIENTOHibrido
+#ALMACENAMIENTO $grupoSSD #ALMACENAMIENTOSSD
+#ALMACENAMIENTOHDD $grupo1TB #MARCA
+#ALMACENAMIENTOHDD $grupo2TB #MARCA
+#ALMACENAMIENTOHDD $grupo500GB #MARCA
+#ALMACENAMIENTOHibrido $grupoDiscoGrande #MARCA
+#ALMACENAMIENTOHibrido $grupoDiscoMediano #MARCA
+#ALMACENAMIENTOHibrido $grupoDiscoPequenio #MARCA
+#ALMACENAMIENTOSSD $grupo1TB #MARCA
+#ALMACENAMIENTOSSD $grupo256GB #MARCA
+#ALMACENAMIENTOSSD $grupo400GB #MARCA
+#GamaEditar $grupoGamaAlta #ALMACENAMIENTO
+#GamaEditar $grupoGamaMedia #ALMACENAMIENTO
+#GamaEditar $grupoGamaPremium #ALMACENAMIENTO
+#GamaEntretenimientoOficina $grupoGamaBaja #ALMACENAMIENTO
+#GamaEntretenimientoOficina $grupoGamaMedia #ALMACENAMIENTO
+#GamaJugar $grupoGamaAlta #ALMACENAMIENTO
+#GamaJugar $grupoGamaPremium #ALMACENAMIENTO
+#MARCA $grupoAcer #PantallaComputadora
+#MARCA $grupoApple #PantallaComputadora
+#MARCA $grupoAsus #PantallaComputadora
+#MARCA $grupoBangho #PantallaComputadora
+#MARCA $grupoDell #PantallaComputadora
+#MARCA $grupoHP #PantallaComputadora
+#MARCA $grupoLenovo #PantallaComputadora
+#MARCA $grupoMsi #PantallaComputadora
+#MARCA $grupoRazer #PantallaComputadora
+#PantallaComputadora $grupoPantGrande #ProcesadorAlta
+#PantallaComputadora $grupoPantGrande #ProcesadorBaja
+#PantallaComputadora $grupoPantGrande #ProcesadorMedia
+#PantallaComputadora $grupoPantGrande #ProcesadorPremium
+#PantallaComputadora $grupoPantMediano #ProcesadorAlta
+#PantallaComputadora $grupoPantMediano #ProcesadorBaja
+#PantallaComputadora $grupoPantMediano #ProcesadorMedia
+#PantallaComputadora $grupoPantMediano #ProcesadorPremium
+#PantallaComputadora $grupoPantPequenio #ProcesadorAlta
+#PantallaComputadora $grupoPantPequenio #ProcesadorBaja
+#PantallaComputadora $grupoPantPequenio #ProcesadorMedia
+#PantallaComputadora $grupoPantPequenio #ProcesadorPremium
+#ProcesadorAlta $grupoI5 #RAMAlta
+#ProcesadorAlta $grupoI7 #RAMAlta
+#ProcesadorBaja $grupoI3 #RAMBaja
+#ProcesadorBaja $grupoPentium #RAMBaja
+#ProcesadorMedia $grupoI3 #RAMMedia
+#ProcesadorMedia $grupoI5 #RAMMedia
+#ProcesadorPremium $grupoI7 #RAMPremium
+#ProcesadorPremium $grupoI9 #RAMPremium

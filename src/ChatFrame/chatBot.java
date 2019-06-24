@@ -23,6 +23,7 @@ public class chatBot extends javax.swing.JFrame {
     private javax.swing.JButton botonEnviar;
     private javax.swing.JTextPane contenedorChat;
     private javax.swing.JTextField textoEnviar;
+    private JTextPane contenedorAgente;
 
     public chatBot() {
         initComponents();
@@ -39,7 +40,7 @@ public class chatBot extends javax.swing.JFrame {
         contenedorChat = new javax.swing.JTextPane();
         JLabel jLabel2 = new JLabel();
         JScrollPane jScrollPane2 = new JScrollPane();
-        JTextPane contenedorAgente = new JTextPane();
+        contenedorAgente = new JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Compras inteligentes");
@@ -141,35 +142,36 @@ public class chatBot extends javax.swing.JFrame {
         SimpleDateFormat format = new SimpleDateFormat("dd/MM HH:mm");
         String auxUsuario = "Usuario: \n      " + texto+"\n   " +
                 "                                  "+format.format(new Date());
-        addText(auxUsuario, Color.BLACK);
+        addText(auxUsuario, Color.BLACK,contenedorChat);
         String dialogoRobot = maquinaDeInferencia.responder(texto, palabraInferida -> {
             StringBuilder palabras = new StringBuilder("KeyWords: ");
-            int i = 1;
+            int i = 0;
             for (Literal l : palabraInferida) {
-                if (i % 4 == 0) {
+                if (i % 2 == 0) {
                     palabras.append("\n");
                 }
+                else palabras.append(", ");
                 palabras.append(l);
                 i++;
             }
             String auxVendedor = "InfoParaElVendedor: \n      " + palabras;
-            addText(auxVendedor, Color.MAGENTA);
+            addText(auxVendedor, Color.MAGENTA,contenedorAgente);
         });
         String auxAgente = "EwentsCorp: \n      " + dialogoRobot+"\n   " +
                 "                                  "+format.format(new Date());
-        addText(auxAgente, Color.ORANGE);
+        addText(auxAgente, Color.ORANGE,contenedorChat);
     }
 
-    private void addText(String text, Color color) {
+    private void addText(String text, Color color, JTextPane contenedor) {
         text += "\n \n";
-        StyledDocument doc = contenedorChat.getStyledDocument();
+        StyledDocument doc = contenedor.getStyledDocument();
         StyleContext sc = StyleContext.getDefaultStyleContext();
         AttributeSet aset = sc.addAttribute(SimpleAttributeSet.EMPTY, StyleConstants.Foreground, color);
         aset = sc.addAttribute(aset, StyleConstants.FontFamily, "Lucida Console");
         aset = sc.addAttribute(aset, StyleConstants.Alignment, StyleConstants.ALIGN_JUSTIFIED);
         int len = doc.getLength();
-        contenedorChat.setCaretPosition(len);
-        contenedorChat.setCharacterAttributes(aset, false);
+        contenedor.setCaretPosition(len);
+        contenedor.setCharacterAttributes(aset, false);
         try {
             doc.insertString(len, text, aset);
         } catch (BadLocationException e) {

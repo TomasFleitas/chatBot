@@ -8,7 +8,7 @@ public class Regla {
 
     private Integer id;
     private ArrayList<Literal> antecedentePalabrasClaves;
-    private String respuestaDialogo;
+    private ArrayList<String> respuestasDialogo;
     private Boolean yaEjecutada = false;
     private int prioridad;
     private int novedad=0;
@@ -16,11 +16,11 @@ public class Regla {
     public Regla() {
     }
 
-    public Regla(Integer id, ArrayList<Literal> antecedentePalabrasClaves, int prioridad, String respuestaDialogo) {
+    public Regla(Integer id, ArrayList<Literal> antecedentePalabrasClaves, int prioridad, ArrayList<String> respuestasDialogo) {
         this.id = id;
         this.antecedentePalabrasClaves = antecedentePalabrasClaves;
         this.prioridad = prioridad;
-        this.respuestaDialogo = respuestaDialogo;
+        this.respuestasDialogo = respuestasDialogo;
     }
 
     public Integer getId() {
@@ -56,12 +56,12 @@ public class Regla {
     }
 
 
-    public String getRespuestaDialogo() {
-        return respuestaDialogo;
+    public ArrayList<String> getRespuestasDialogo() {
+        return respuestasDialogo;
     }
 
-    public void setRespuestaDialogo(String respuestaDialogo) {
-        this.respuestaDialogo = respuestaDialogo;
+    public void setRespuestasDialogo(ArrayList<String> respuestasDialogo) {
+        this.respuestasDialogo = respuestasDialogo;
     }
 
     public Boolean getYaEjecutada() {
