@@ -111,7 +111,7 @@ public class chatBot extends javax.swing.JFrame {
     }
 
     private void botonEnviarActionPerformed() {
-        if (textoEnviar.getText().length() > 0) enviarDatosMaquinaDeInferencias(textoEnviar.getText());
+        if (textoEnviar.getText().length() > 0) enviarDatosMaquinaDeInferencias(textoEnviar.getText()); textoEnviar.setText("");
     }
 
     private void botonEnviarKeyTyped(java.awt.event.KeyEvent evt) {
@@ -153,11 +153,11 @@ public class chatBot extends javax.swing.JFrame {
                 i++;
             }
             String auxVendedor = "InfoParaElVendedor: \n      " + palabras;
-            addText(auxVendedor, Color.ORANGE);
+            addText(auxVendedor, Color.MAGENTA);
         });
         String auxAgente = "EwentsCorp: \n      " + dialogoRobot+"\n   " +
                 "                                  "+format.format(new Date());
-        addText(auxAgente, Color.GREEN);
+        addText(auxAgente, Color.ORANGE);
     }
 
     private void addText(String text, Color color) {
