@@ -79,6 +79,8 @@ public class MI {
                 MT.add(palabrasRaices.get(literalesDeUsuario.get(h)));
         }
 
+        System.out.println("MT: ");
+        for(Literal literal : MT) System.out.println(literal);
         //SE REALIZA LA INFERENCIA
 
         ArrayList<Regla> reglasCotejadas = new ArrayList<>();

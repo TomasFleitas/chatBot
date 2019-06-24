@@ -1,4 +1,4 @@
-21
+22
 #Saludo
 3
 Hola, en qué lo puedo ayudar?
@@ -20,7 +20,7 @@ Ahora necesito saber, si desea gama media, alta o premium. La baja no es recomen
 2
 Ahora necesito saber, si desea gama alta o premium. Una gama menor no brindará esta funcionalidad
 ¿Prefiere gama alta o premium? Gamas menores no ofrecen esta funcionalidad
-#GamaEntretenimiento
+#GamaEntretenimientoOficina
 2
 Con una gama baja o media le debería bastar, ¿cuál prefiere?
 Para esta funcionalidad, con gama baja o media es suficiente, ¿cuál va a escoger?
@@ -84,8 +84,11 @@ Prefiere un SSD, un HDD o una configuración híbrida
 2
 ¿Quiere alguna marca en especial?
 ¿Tiene preferencia por alguna marca?
+#Fin
+1
+He encontrado el producto perfecto para ti, un vendedor seguirá el proceso. Tambien podes seguir consultandome
 46
-$grupoBuscar:buscando,viendo,comprar,necesito,necesitar
+$grupoBuscar:buscando,viendo,comprar,necesito,necesitar,hola
 $grupoPc:notebook,computadora,compu,pc,portatil
 $grupoTV:tv,smart,television,televisor,lcd
 $grupoCelular:Smartphone,Celu,celular,movil,telefono
@@ -131,12 +134,44 @@ $grupoBangho:bangho
 $grupoApple:apple
 $grupoRazer:razer
 $grupoDell:dell
-53
-#Saludo $grupoPc #UsoComputadora
+70
+#Saludo $grupoBuscar #General
+#General $grupoPc #UsoComputadora
 #UsoComputadora $grupoEditar #GamaEditar
 #UsoComputadora $grupoJugar #GamaJugar
 #UsoComputadora $grupoEntretenimiento #GamaEntretenimientoOficina
 #UsoComputadora $grupoOficina #GamaEntretenimientoOficina
+#GamaEditar $grupoGamaAlta #ProcesadorAlta
+#GamaEditar $grupoGamaMedia #ProcesadorMedia
+#GamaEditar $grupoGamaPremium #ProcesadorPremium
+#GamaEntretenimientoOficina $grupoGamaBaja #ProcesadorBaja
+#GamaEntretenimientoOficina $grupoGamaMedia #ProcesadorMedia
+#GamaJugar $grupoGamaAlta #ProcesadorAlta
+#GamaJugar $grupoGamaPremium #ProcesadorPremium
+#ProcesadorBaja $grupoPentium #RAMBaja
+#ProcesadorBaja $grupoI3 #RAMBaja
+#ProcesadorBaja $grupoI5 #RAMBaja
+#ProcesadorBaja $grupoI7 #RAMBaja
+#ProcesadorBaja $grupoI9 #RAMBaja
+#ProcesadorMedia $grupoI3 #RAMMedia
+#ProcesadorMedia $grupoI5 #RAMMedia
+#ProcesadorMedia $grupoI7 #RAMMedia
+#ProcesadorMedia $grupoI9 #RAMMedia
+#ProcesadorAlta $grupoI5 #RAMAlta
+#ProcesadorAlta $grupoI7 #RAMAlta
+#ProcesadorAlta $grupoI9 #RAMAlta
+#ProcesadorPremium $grupoI7 #RAMPremium
+#ProcesadorPremium $grupoI9 #RAMPremium
+#RAMBaja $grupo4GB #ALMACENAMIENTO
+#RAMBaja $grupo8GB #ALMACENAMIENTO
+#RAMBaja $grupo12GB #ALMACENAMIENTO
+#RAMBaja $grupo16GB #ALMACENAMIENTO
+#RAMMedia $grupo8GB #ALMACENAMIENTO
+#RAMMedia $grupo12GB #ALMACENAMIENTO
+#RAMMedia $grupo16GB #ALMACENAMIENTO
+#RAMAlta $grupo12GB #ALMACENAMIENTO
+#RAMAlta $grupo16GB #ALMACENAMIENTO
+#RAMPremium $grupo16GB #ALMACENAMIENTO
 #ALMACENAMIENTO $grupoHDD #ALMACENAMIENTOHDD
 #ALMACENAMIENTO $grupoHibrido #ALMACENAMIENTOHibrido
 #ALMACENAMIENTO $grupoSSD #ALMACENAMIENTOSSD
@@ -149,13 +184,6 @@ $grupoDell:dell
 #ALMACENAMIENTOSSD $grupo1TB #MARCA
 #ALMACENAMIENTOSSD $grupo256GB #MARCA
 #ALMACENAMIENTOSSD $grupo400GB #MARCA
-#GamaEditar $grupoGamaAlta #ALMACENAMIENTO
-#GamaEditar $grupoGamaMedia #ALMACENAMIENTO
-#GamaEditar $grupoGamaPremium #ALMACENAMIENTO
-#GamaEntretenimientoOficina $grupoGamaBaja #ALMACENAMIENTO
-#GamaEntretenimientoOficina $grupoGamaMedia #ALMACENAMIENTO
-#GamaJugar $grupoGamaAlta #ALMACENAMIENTO
-#GamaJugar $grupoGamaPremium #ALMACENAMIENTO
 #MARCA $grupoAcer #PantallaComputadora
 #MARCA $grupoApple #PantallaComputadora
 #MARCA $grupoAsus #PantallaComputadora
@@ -165,23 +193,16 @@ $grupoDell:dell
 #MARCA $grupoLenovo #PantallaComputadora
 #MARCA $grupoMsi #PantallaComputadora
 #MARCA $grupoRazer #PantallaComputadora
-#PantallaComputadora $grupoPantGrande #ProcesadorAlta
-#PantallaComputadora $grupoPantGrande #ProcesadorBaja
-#PantallaComputadora $grupoPantGrande #ProcesadorMedia
-#PantallaComputadora $grupoPantGrande #ProcesadorPremium
-#PantallaComputadora $grupoPantMediano #ProcesadorAlta
-#PantallaComputadora $grupoPantMediano #ProcesadorBaja
-#PantallaComputadora $grupoPantMediano #ProcesadorMedia
-#PantallaComputadora $grupoPantMediano #ProcesadorPremium
-#PantallaComputadora $grupoPantPequenio #ProcesadorAlta
-#PantallaComputadora $grupoPantPequenio #ProcesadorBaja
-#PantallaComputadora $grupoPantPequenio #ProcesadorMedia
-#PantallaComputadora $grupoPantPequenio #ProcesadorPremium
-#ProcesadorAlta $grupoI5 #RAMAlta
-#ProcesadorAlta $grupoI7 #RAMAlta
-#ProcesadorBaja $grupoI3 #RAMBaja
-#ProcesadorBaja $grupoPentium #RAMBaja
-#ProcesadorMedia $grupoI3 #RAMMedia
-#ProcesadorMedia $grupoI5 #RAMMedia
-#ProcesadorPremium $grupoI7 #RAMPremium
-#ProcesadorPremium $grupoI9 #RAMPremium
+#PantallaComputadora $grupoPantGrande #Fin
+#PantallaComputadora $grupoPantGrande #Fin
+#PantallaComputadora $grupoPantGrande #Fin
+#PantallaComputadora $grupoPantGrande #Fin
+#PantallaComputadora $grupoPantMediano #Fin
+#PantallaComputadora $grupoPantMediano #Fin
+#PantallaComputadora $grupoPantMediano #Fin
+#PantallaComputadora $grupoPantMediano #Fin
+#PantallaComputadora $grupoPantPequenio #Fin
+#PantallaComputadora $grupoPantPequenio #Fin
+#PantallaComputadora $grupoPantPequenio #Fin
+#PantallaComputadora $grupoPantPequenio #Fin
+
